@@ -2,9 +2,9 @@ TarotVr is an immersive VR experience created with a Rails backend and a React f
 
 To run it, open each directory in seperate terminals. 
 
-For the frontend, run `npm install && npm start`. Firefox is the preferred browser due to CORS related issues on Chrome. To see images on Chrome, a CORS plugin must be enabled. Edits to the Profile page cannot be made on Chrome as well due to CORS issue. Firefox circumvents all these issues.
+The backend is ran using a postgresQL database. To run it, make sure you have Postgres (https://www.postgresql.org/download/) installed. Then run `rake db:create && rake db:migrate && rake db:seed && rails s`. This will initialize the database with Tarot cards and a place to store user information.
 
-The backend is ran using a postgresQL database. To run it, make sure you have a Postgres (https://www.postgresql.org/download/) installed. Then run `rake db:create && rake db:migrate && rake db:seed && rails s`. This will initialize the database with Tarot cards and a place to store user information. 
+For the frontend, run `npm install && npm start`. You will have to change the base URL in `./src/baseURL.js` to wherever you're running the backend server and change the backend server CORS configuration in `./config/application.rb` to request the `*` origin. 
 
 This project is a combination of two Github repositories which can be originally found here: 
 
